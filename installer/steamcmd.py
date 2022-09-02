@@ -19,7 +19,7 @@ app_license_request {2}
     self.volumes = self.getVolumes()
 
   def getAppInfo(self):
-    result = subprocess.check_output(["steamcmd", "+app_info_print",
+    result = subprocess.check_output(["steamcmd", "+login anonymous", "+app_info_print",
                                       str(self.appid), "+quit"]).decode('utf-8')
     json_begin = re.search(colonre, result)
     if json_begin is None:
